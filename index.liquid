@@ -1,0 +1,27 @@
+	{%- for option in product.options_with_values -%}
+              {% if option.name contains "color" or option.name contains "Color" or option.name contains "Colour" or option.name contains "colour" %}
+							<legend class="product-form__group-name">{{ option.name }}:  <span id="selected-value-{{ forloop.index }}">{{ option.selected_value }}</span>   </legend>
+						{% endif %}
+		{%- endfor -%}
+
+<scrip>
+onVariantChange() {
+  const valueOption1 = this.currentVariant.option1;
+		const option1 = 	document.getElementById("selected-value-1");
+			if (valueOption1 != null && option1 != null ) {
+				option1.innerHTML = valueOption1;
+			}
+
+			const valueOption2 = this.currentVariant.option2;
+			const option2 = document.getElementById("selected-value-2");
+			if (valueOption2 != null && option2 != null) {
+				option2.innerHTML = valueOption2;
+			}
+			
+			const valueOption3 = this.currentVariant.option3;
+			const option3 = document.getElementById("selected-value-3");
+			if (valueOption3 != null && option3 != null) {
+				option3.innerHTML = valueOption3;
+			}
+   }
+<.script>
